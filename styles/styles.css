@@ -1,0 +1,12 @@
+.btn-primary {
+    margin-top: 2em;
+    background-color: #2b542c;
+    border: none;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+    background-color: #2b542c;
+    border: none;
+}
+

@@ -13,7 +13,19 @@ $f3 = Base::instance();
 $f3->route('GET /', function () {
     $view = new Template();
     echo $view->render('views/home.html');
+
 });
+
+$f3->route('GET /breakfast', function () {
+    $view = new Template();
+    echo $view->render('views/breakfast.html');
+});
+
+$f3->route('GET /lunch', function () {
+    $view = new Template();
+    echo $view->render('views/lunch.html');
+});
+
 
 //Run f3
 $f3->run();
