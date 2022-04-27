@@ -26,6 +26,10 @@ $f3->route('GET /lunch', function () {
     echo $view->render('views/lunch.html');
 });
 
+$f3->route('GET /order', function () {
+    $view = new Template();
+    echo $view->render('views/orderForm1.html');
+});
 
 //Run f3
 $f3->run();
