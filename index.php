@@ -31,5 +31,10 @@ $f3->route('GET /order', function () {
     echo $view->render('views/orderForm1.html');
 });
 
+$f3->route('POST /order2', function () {
+    $view = new Template();
+    echo $view->render('views/orderForm2.html');
+});
+
 //Run f3
 $f3->run();

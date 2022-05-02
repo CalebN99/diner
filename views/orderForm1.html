@@ -1,12 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Diner</title>
-</head>
+<include href="views/header.html"></include>
 <body>
+    <div class="container">
+        <h1>My Diner</h1>
+        <h2>Order Part 1</h2>
 
-<h1>Order part 1</h1>
+        <form action="order2" method="POST" class="form-horizontal">
+            <div class="form-group">
+                <label for="food" class="col-sm-4 control-label">What food would you like to order?</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" name="food" id="food">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Select a meal</label>
+                <div class="col-sm-4">
+                    <label><input type="radio" name="meal" value="breakfast">Breakfast</label>
+                    <br>
+                    <label><input type="radio" name="meal" value="lunch">Lunch</label>
+                    <br>
+                    <label><input type="radio" name="meal" value="dinner">Dinner</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Next</button>
+        </form>
+
+
+    </div>
+
 
 </body>
 </html>
