@@ -10,10 +10,11 @@
                 <div class="col-sm-4">
                     <input class="form-control" type="text" name="food" id="food">
                 </div>
+                <check if="{{ isset(@errors['food']) }}">
+                    <span class="text-danger">{{ @errors['food'] }}</span>
+                </check>
             </div>
-            <check if="{{ isset(@errors['food']) }}">
-                <span class="err">{{ @errors['food'] }}</span>
-            </check>
+
             <br>
 
             <div class="form-group">
