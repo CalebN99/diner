@@ -7,6 +7,7 @@ session_start();
 
 //Require the autoload file
 require_once('vendor/autoload.php');
+require_once('model/data-layer.php');
 
 //Create an instance of the Base class
 $f3 = Base::instance();
@@ -28,23 +29,26 @@ $f3->route('GET /lunch', function () {
     echo $view->render('views/lunch.html');
 });
 
-$f3->route('GET /order', function () {
+$f3->route('GET /order', function ($f3) {
+    $f3->set('meals', getMeals());
+
     $view = new Template();
     echo $view->render('views/orderForm1.html');
 });
 
-$f3->route('POST /order2', function () {
-    var_dump($_POST);
+$f3->route('GET|POST /order2', function ($f3) {
     $_SESSION['food'] = $_POST['food'];
     $_SESSION['meal'] = $_POST['meal'];
+
+    $f3->set('condiments', getCondiments());
 
     $view = new Template();
     echo $view->render('views/orderForm2.html');
 });
 
-$f3->route('POST /summary', function () {
+$f3->route('GET|POST /summary', function () {
 
-    if(empty($POST['conds'])) {
+    if(empty($_POST['conds'])) {
         $conds = 'none selected';
     } else {
         $conds = implode(", ", $_POST['conds']);
